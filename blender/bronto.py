@@ -12,7 +12,7 @@ No textures are created. The mesh has:
     UV_UNIT model units), so tiling textures line up across the whole body;
   - three empty material slots ("Skin", "Belly", "Eye") to put your textures on.
 
-The model faces +X, stands on Z = 0 and is about 12 units tall at the head
+The model faces +X, stands on Z = 0 and is about 11.7 units tall at the head
 with SCALE = 1.0. Works in Blender 3.6 through 5.x.
 """
 
@@ -36,46 +36,46 @@ NAME = "Bronto"
 # spline, then lofted with a chamfered octagon profile.
 # --------------------------------------------------------------------------
 BODY_KEYS = [                     # tail tip -> chest
-    (-13.60, 3.20, 0.14, 0.12),
-    (-12.30, 3.30, 0.55, 0.38),
-    (-11.00, 3.45, 0.95, 0.70),
-    (-9.70,  3.55, 1.30, 1.00),
-    (-8.50,  3.65, 1.60, 1.25),
-    (-7.40,  3.72, 1.90, 1.50),
-    (-6.50,  3.75, 2.20, 1.85),
-    (-5.50,  3.62, 2.65, 2.55),   # hips
-    (-4.30,  3.62, 3.20, 3.50),
-    (-2.80,  3.70, 3.45, 4.10),
-    (-1.60,  3.74, 3.50, 4.25),   # hump: highest point of the back
-    (-0.20,  3.70, 3.40, 4.05),
-    (0.90,   3.68, 3.15, 3.70),   # shoulders
-    (1.55,   3.72, 2.70, 3.10),
-    (1.90,   3.80, 1.90, 2.20),   # front of chest
+    (-14.00, 2.95, 0.12, 0.10),   # tail tip, curled slightly up
+    (-13.20, 2.55, 0.40, 0.35),
+    (-12.30, 2.32, 0.68, 0.60),
+    (-11.30, 2.20, 0.90, 0.82),
+    (-10.30, 2.20, 1.08, 0.98),   # lowest point of the tail
+    (-9.30,  2.40, 1.25, 1.12),
+    (-8.30,  2.70, 1.42, 1.32),
+    (-7.40,  3.05, 1.65, 1.55),
+    (-6.60,  3.45, 1.95, 1.85),   # base of the tail
+    (-5.60,  3.90, 2.25, 2.25),   # hips
+    (-4.20,  3.98, 2.45, 2.75),
+    (-2.60,  3.95, 2.50, 3.00),   # deepest part of the body
+    (-1.00,  3.85, 2.45, 2.95),
+    (0.10,   3.80, 2.30, 2.70),   # shoulders
+    (0.55,   3.78, 1.95, 2.15),
+    (0.80,   3.80, 1.40, 1.50),   # front of chest
 ]
 BODY_CHAMFER = 0.38
-BODY_TOP_NARROW = 0.80            # top face narrower than the belly
+BODY_TOP_NARROW = 0.75            # top face narrower than the belly
 
-NECK_KEYS = [                     # chest -> back of head
-    (0.20,  4.10, 2.20, 2.50),    # buried in the shoulders
-    (0.75,  5.40, 1.80, 1.95),
-    (1.15,  6.70, 1.55, 1.62),
-    (1.50,  8.00, 1.40, 1.42),
-    (1.80,  9.20, 1.30, 1.30),
-    (2.08,  10.30, 1.22, 1.22),
-    (2.30,  11.05, 1.18, 1.16),
-    (2.40,  11.40, 1.15, 1.10),
+NECK_KEYS = [                     # chest -> under the head
+    (-0.40, 4.00, 1.70, 1.95),    # buried in the shoulders
+    (-0.05, 5.10, 1.40, 1.50),
+    (0.30,  6.20, 1.22, 1.28),
+    (0.65,  7.30, 1.12, 1.15),
+    (1.00,  8.30, 1.06, 1.08),
+    (1.30,  9.20, 1.02, 1.04),
+    (1.55,  9.95, 1.00, 1.00),
+    (1.70,  10.55, 0.98, 0.98),
 ]
 NECK_CHAMFER = 0.40
 
 HEAD_KEYS = [                     # back of skull -> nose
-    (1.80,  11.38, 0.85, 0.95),
-    (2.00,  11.40, 1.22, 1.32),
-    (2.40,  11.45, 1.36, 1.48),   # widest, top of the skull
-    (2.95,  11.42, 1.34, 1.42),
-    (3.50,  11.30, 1.22, 1.18),   # eyes sit here
-    (3.95,  11.18, 1.08, 0.95),
-    (4.25,  11.12, 0.98, 0.82),   # snout
-    (4.38,  11.10, 0.78, 0.62),   # nose
+    (1.15,  10.95, 0.80, 0.95),
+    (1.35,  11.00, 1.08, 1.30),
+    (1.80,  11.02, 1.18, 1.42),   # top of the skull
+    (2.40,  10.95, 1.15, 1.32),
+    (2.95,  10.82, 1.06, 1.15),   # eyes sit here
+    (3.35,  10.72, 0.98, 1.00),   # snout
+    (3.62,  10.68, 0.80, 0.80),   # nose
 ]
 HEAD_CHAMFER = 0.38
 
@@ -83,31 +83,31 @@ HEAD_CHAMFER = 0.38
 # (x_offset, z, width_y, depth_x). The top key is hidden in the body and
 # bulges out a little to form the thigh / shoulder.
 LEG_POSITIONS = {
-    "front": [(0.25, 1.10), (0.25, -1.10)],
-    "back":  [(-3.80, 1.10), (-3.80, -1.10)],
+    "front": [(-0.30, 0.78), (-0.30, -0.78)],
+    "back":  [(-4.40, 0.78), (-4.40, -0.78)],
 }
 LEG_KEYS = {
     "front": [
-        (0.10, 3.30, 1.45, 2.10),
-        (0.05, 2.30, 1.40, 1.80),
-        (-0.05, 1.45, 1.25, 1.55),   # elbow
-        (0.00, 0.70, 1.18, 1.45),
-        (0.00, 0.22, 1.24, 1.52),
-        (0.00, 0.00, 1.32, 1.62),    # sole
+        (-0.15, 4.10, 1.15, 1.85),   # shoulder, hidden in the body
+        (-0.10, 2.70, 1.05, 1.55),
+        (0.00, 1.45, 0.92, 1.32),    # elbow
+        (0.00, 0.60, 0.90, 1.28),
+        (0.00, 0.20, 0.96, 1.36),
+        (0.00, 0.00, 1.02, 1.44),    # sole
     ],
     "back": [
-        (-0.15, 3.30, 1.50, 2.30),
-        (-0.10, 2.30, 1.45, 1.95),
-        (0.05, 1.45, 1.30, 1.62),    # knee
-        (0.00, 0.70, 1.20, 1.48),
-        (0.00, 0.22, 1.26, 1.55),
-        (0.00, 0.00, 1.34, 1.66),    # sole
+        (-0.60, 4.30, 1.20, 2.25),   # thigh, hidden in the body
+        (-0.40, 3.00, 1.12, 1.85),
+        (-0.12, 1.70, 0.98, 1.42),   # knee
+        (0.00, 0.60, 0.90, 1.28),
+        (0.00, 0.20, 0.96, 1.36),
+        (0.00, 0.00, 1.02, 1.44),    # sole
     ],
 }
 LEG_CHAMFER = 0.30
 
 # Eye: centre (x, |y|, z) and radius. Mirrored to both sides of the head.
-EYE = (3.52, 0.57, 11.62, 0.19)
+EYE = (2.85, 0.52, 11.25, 0.24)
 
 MAT_SKIN, MAT_BELLY, MAT_EYE = range(3)
 MATERIALS = [("Skin", (0.43, 0.39, 0.37)),
